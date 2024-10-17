@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html, body{
+  width:100%;
+  height: 100%;
+  background-color: var(--bgColor);
+  overflow-x: hidden;  /* Disable horizontal scrolling */
+}
+
+:root{
+  --bgColor : #070E07;
+  --textColor : #fff;
+  --navBgColor :#8FEEFF4A;
+ 
+}
+
+.light{
+  --bgColor : #fff;
+  --textColor : #000;
+  --navBgColor :#98FF0078;
+ 
+}
+
+
+
+/*======== Nav Bar =========*/
+
+nav {
+  width:100%;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+nav .logo{
+  width:60px;
+  cursor: pointer;
+  height: 60px;
+  border-radius: 50%;
+}
+
+nav svg{
+  width:30px;
+  height: 30px;
+  cursor: pointer;
+
+  
+}
+
+/* Hidden off-screen by default */
+nav .navBar{
+  width: 40%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  right: -100%; /* Off-screen initially */
+  backdrop-filter: blur(10px);
+  background-color: var(--navBgColor);
+  padding: 100px 30px;
+  transition: right 0.3s ease;  /* Slide effect */
+}
+
+.navBar.active {
+  right: 0;  /* When active, show it */
+}
+
+.navBar h3{
+  color: var(--textColor);
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 3rem;
+  cursor: pointer;
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+
+.navBar h3:hover{
+  color: yellow;
+  transform: scale(1.5);  /* Use transform instead of scale */
+}
+
+.navBar svg{
+  position: absolute;
+  top: 1.5rem;
+  right: 0.5rem;
+  
+}
+
+
+/*======= Heading Section =========*/
+
+
+.heding{
+  padding: 1.3rem;
+}
+
+.heding h1{
+  color:var(--textColor);
+  font-size:3rem;
+  text-align: center;
+}
+.heding h3{
+  margin-top:3rem;
+  color:var(--textColor);
+  font-size: 1.4rem;
+  text-align: center;
+  font-weight: 400;
+}
+
+
+.hero{
+  padding: 3rem;
+}
+
+.hero img{
+ margin-left: 5rem;
+ width:60%;
+ height: 60%;
+}
+
+/* ==== Dark & Light Mode ====*/
+
+.mode .button{
+  width:80px;
+  height: 40px;
+  background-color: #1A1A1A;
+  position: absolute ;
+  border-radius: 3rem;
+  top:2rem;
+  right:4rem;
+  border:1px solid #fff;
+}
+
+
+
+.mode .button:before{
+  position: absolute;
+  content: '';
+  width:30px;
+  height: 30px;
+  background-color: #fff;
+  border-radius: 50%;
+  margin:0.2rem;
+}
+
+
+.mode input[type="checkbox"]:checked + .button:before {
+  transform: translateX(40px);
+}
+
+.mode input[type="checkbox"]:checked + .button {
+  background-color: #00096B; /* Change background color when checked */
+}
+
+.mode input{
+  visibility: hidden;
+}
+
