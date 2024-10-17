@@ -6,6 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  text-decoration:none;
 }
 
 html, body{
@@ -63,10 +64,11 @@ nav .navBar{
   position: fixed;
   top: 0;
   right: -100%; /* Off-screen initially */
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
   background-color: var(--navBgColor);
   padding: 100px 30px;
   transition: right 0.3s ease;  /* Slide effect */
+  z-index: 999;
 }
 
 .navBar.active {
